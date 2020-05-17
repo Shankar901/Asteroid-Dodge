@@ -24,12 +24,15 @@ with open('LocalData/score.txt', 'r') as f:
 	high_score_phrase = f.read()
 	high_score = int(high_score_phrase[high_score_phrase.find(' '):])
 
-explosion = pygame.image.load('explosions/regularExplosion02.png')
+explosion = pygame.image.load('explosions/explosion.png')
 
 count = 0
 
 surface = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT), flags)
 pygame.display.set_caption('Asteroid Dodge')
+
+icon = pygame.image.load('images/icon.png')
+pygame.display.set_icon(icon)
 surface.set_alpha(None)
 
 clock = pygame.time.Clock()
@@ -299,21 +302,21 @@ def main_loop():
 
 		ast_x, ast_y, ast_speed1 = display_asteroid(ast_x, ast_y, ast_speed1, all_ast_heights[0])
 
-		if dodged >= 25:
+		if dodged >= 20:
 			ast_x2, ast_y2, ast_speed2 = display_asteroid(ast_x2, ast_y2, ast_speed2, all_ast_heights[1])
 
-		if dodged >= 50:
+		if dodged >= 40:
 			ast_x3, ast_y3, ast_speed3 = display_asteroid(ast_x3, ast_y3, ast_speed3, all_ast_heights[2])
 
 		bg_y_change += 0.0001
 		if math.sqrt((x - ast_x) ** 2 + (y - ast_y) ** 2) < 64:
 			crash(x, y)
 
-		if dodged >= 25:
+		if dodged >= 20:
 			if math.sqrt((x - 30 - ast_x2) ** 2 + (y - ast_y2) ** 2) < 100:
 				crash(x, y)
 
-		if dodged >= 50:
+		if dodged >= 40:
 			if math.sqrt((x - 30 - ast_x3) ** 2 + (y - ast_y3) ** 2) < 100:
 				crash(x, y)
 
@@ -343,9 +346,9 @@ def main_loop():
 
 		pack(asteroid, ast_x, ast_y)
 
-		if dodged >= 25:
+		if dodged >= 20:
 			pack(asteroid2, ast_x2, ast_y2)
-		if dodged >= 50:
+		if dodged >= 40:
 			pack(asteroid3, ast_x3, ast_y3)
 		pack(spaceship, x, y)
 		ast_dodged(dodged)
