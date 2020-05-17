@@ -4,6 +4,8 @@ import random
 import time
 import math
 import os
+from tkinter import *
+from tkinter import messagebox
 
 pygame.init()
 
@@ -39,6 +41,7 @@ clock = pygame.time.Clock()
 
 crash_sound = pygame.mixer.Sound('sounds/crash.wav')
 music = pygame.mixer.music.load('sounds/bgmusic.mp3')
+is_music_enabled = True
 
 asteroid = pygame.image.load('images/asteroid.png')
 asteroid2 = pygame.image.load('images/asteroid2 (2).png')
@@ -50,8 +53,8 @@ background = background.convert()
 ship_width = 64
 paused = False
 
-speed_y = 1
-speed_x = 6
+speed_y = 1.7
+speed_x = 9
 
 def pack(item, x, y):
 	surface.blit(item, (x, y))
@@ -59,22 +62,22 @@ def pack(item, x, y):
 def switch_shuttle():
 	global spaceship, speed_x, speed_y
 	spaceship = pygame.image.load('images/transport.png')
-	speed_y = 0.7
-	speed_x = 8
+	speed_y = 1.7
+	speed_x = 9
 	intro_screen()
 
 def switch_razor():
 	global spaceship, speed_x, speed_y
 	spaceship = pygame.image.load('images/space-ship.png')
-	speed_y = 1.7
-	speed_x = 7.1
+	speed_y = 2.7
+	speed_x = 8.1
 	intro_screen()
 
 def switch_spacejet():
 	global spaceship, speed_x, speed_y
 	spaceship = pygame.image.load('images/ship.png')
-	speed_y = 1.3
-	speed_x = 7.4
+	speed_y = 2.3
+	speed_x = 8.4
 	time.sleep(0.1)
 	intro_screen()
 
@@ -195,6 +198,19 @@ def new_game():
 	high_score = 0
 	main_loop()
 
+def swap_music():
+	global is_music_enabled
+	if is_music_enabled:
+		is_music_enabled = False
+		pygame.mixer.music.set_volume(0)
+		Tk().wm_withdraw()
+		messagebox.showinfo('Music','Music Disabled')
+	else:
+		is_music_enabled = True
+		pygame.mixer.music.set_volume(0.35)
+		Tk().wm_withdraw()
+		messagebox.showinfo('Music', 'Music Enabled')
+
 def intro_screen():
 	intro = True
 	while intro:
@@ -210,7 +226,8 @@ def intro_screen():
 
 		button(310, 170, 300, 40, new_game, (0, 100, 180), (0, 120, 240), "New Game")
 		button(310, 170, 350, 40, main_loop, (0, 210, 50), (0, 240, 90), "Continue")
-		button(550, 220, 530, 40, select_ship, (235, 230, 0), (250, 240, 0), "Change Ship")
+		button(600, 170, 530, 40, select_ship, (235, 230, 0), (250, 240, 0), "Change Ship")
+		button(310, 170, 530, 40, swap_music, (20, 20, 20), (30, 30, 30), "Music")
 		button(30, 170, 530, 40, quit, (200, 0, 50), (240, 0, 90), "Exit")
 		pygame.display.update()
 		clock.tick(40)
@@ -268,7 +285,8 @@ def main_loop():
 	y_change = 0
 	bg_y_change = 0
 
-	pygame.mixer.music.play(-1)
+	if is_music_enabled:
+		pygame.mixer.music.play(-1)
 	running = True
 	while running:
 

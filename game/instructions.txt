@@ -1,0 +1,24 @@
+Hello There!
+Welcome to Asteroid Dodge.
+
+Instructions: (How to Play) 
+{
+    1. Use Arrow Keys for movement.
+    2. Use Spacebar to Pause and Unpause.
+}
+
+Recommendations and Warnings: 
+{
+    1. If the game feels slow, close other programs running in background or
+       turn off power saving mode in you computer.
+       If both methods fail, plug in your computer to a power socket.
+
+    2. Do not delete LocalData folder that gets automatically generated after
+       you start the game, it saves your highscore.
+
+    3. Clicking New Game will reset your highscore. 
+}
+
+Thank You for playing and Testing my Game.
+
+-- Sankara Narayanan .B
