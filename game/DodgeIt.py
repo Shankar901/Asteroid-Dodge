@@ -1,3 +1,4 @@
+import pygame._view
 import pygame
 from pygame.locals import *
 import random
@@ -84,7 +85,7 @@ def select_ship():
 	razor_img = pygame.image.load('images/razor1.png')
 
 	def display_font(text, x, y):
-		Text = pygame.font.SysFont(None, 20)
+		Text = pygame.font.SysFont('timesnewroman', 20)
 		text_surface, text_rect = text_(text, Text, (255, 255, 255))
 		text_rect.center = (x, y)
 		surface.blit(text_surface, text_rect)
@@ -120,7 +121,7 @@ def select_ship():
 
 
 def ast_dodged(count):
-	font = pygame.font.SysFont(None, 40)
+	font = pygame.font.SysFont('timesnewroman', 40)
 	text = font.render(f"Score: {str(count)}", True, (51, 204, 255))
 	surface.blit(text, (20, 20))
 
@@ -135,13 +136,13 @@ def button(x, w, y, h, func, color, bright_color, text):
 	else:
 		pygame.draw.rect(surface, color, (x, y, w, h))
 
-	Text = pygame.font.SysFont(None, 30)
+	Text = pygame.font.SysFont('timesnewroman', 30)
 	text_surface, text_rect = text_(text, Text, (255, 255, 255))
 	text_rect.center = ( (x+(w/2)), (y+(h/2)) )
 	surface.blit(text_surface, text_rect)
 
 def dis_high_score(high_score):
-	font = pygame.font.SysFont(None, 40)
+	font = pygame.font.SysFont('timesnewroman', 40)
 	text = font.render(f"HighScore: {str(high_score)}", True, (51, 204, 255))
 	surface.blit(text, (DISPLAY_WIDTH - 200, 20))
 
@@ -178,7 +179,7 @@ def crash(x, y):
 
 		surface.fill((0, 0, 4))
 
-		Text = pygame.font.SysFont(None, 90)
+		Text = pygame.font.SysFont('timesnewroman', 90)
 		text_surface, text_rect = text_("Game Over", Text, (255, 0, 100))
 		text_rect.center = (DISPLAY_WIDTH * 0.5, DISPLAY_HEIGHT * 0.35)
 		surface.blit(text_surface, text_rect)
@@ -203,7 +204,7 @@ def intro_screen():
 				exit()
 
 		surface.fill((0, 0, 4))
-		Text = pygame.font.SysFont(None, 100)
+		Text = pygame.font.SysFont('timesnewroman', 100)
 		text_Surface, text_rect = text_("Asteroid Dodge", Text, (200, 200, 255))
 		text_rect.center = (DISPLAY_WIDTH * 0.5, DISPLAY_HEIGHT * 0.35)
 		surface.blit(text_Surface, text_rect)
@@ -234,7 +235,7 @@ def pause():
 					paused = False
 
 		surface.fill((0, 0, 4))
-		Text = pygame.font.SysFont(None, 100)
+		Text = pygame.font.SysFont('timesnewroman', 100)
 		text_Surface, text_rect = text_("Paused", Text, (255, 255, 255))
 		text_rect.center = (DISPLAY_WIDTH * 0.5, DISPLAY_HEIGHT * 0.35)
 		surface.blit(text_Surface, text_rect)
