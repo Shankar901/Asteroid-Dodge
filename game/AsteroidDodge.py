@@ -6,7 +6,6 @@ import math
 import os
 from tkinter import *
 from tkinter import messagebox
-from tkinter.simpledialog import askstring
 
 pygame.init()
 
