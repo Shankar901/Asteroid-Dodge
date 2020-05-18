@@ -6,6 +6,7 @@ import math
 import os
 from tkinter import *
 from tkinter import messagebox
+from tkinter.simpledialog import askstring
 
 pygame.init()
 
@@ -104,20 +105,20 @@ def select_ship():
 		surface.blit(text_surface, text_rect)
 		button(30, 140, 30, 40, intro_screen, (50, 50, 50), (60, 60, 60), "Back")
 		button(100, 170, 400, 40, switch_shuttle, (200, 60, 0), (210, 80, 0), "Shuttle")
-		button(520, 170, 400, 40, switch_razor, (0, 200, 100), (0, 220, 120), "Razor")
+		button(520, 170, 400, 40, switch_razor, (0, 180, 100), (0, 200, 140), "Razor")
 		button(310, 170, 400, 40, switch_spacejet, (100, 0, 200), (120, 0, 220), "Space Jet")
 
 		surface.blit(shuttle_img, (120, 250))
-		display_font("Hor Speed: 8", 180, 470)
-		display_font("Vert Speed: 0.7", 180, 490)
+		display_font("Hor Speed: 9", 180, 470)
+		display_font("Vert Speed: 1.7", 180, 490)
 
 		surface.blit(jet_img, (330, 250))
-		display_font("Hor Speed: 7.4", 390, 470)
-		display_font("Vert Speed: 1.3", 390, 490)
+		display_font("Hor Speed: 8.4", 390, 470)
+		display_font("Vert Speed: 2.3", 390, 490)
 
 		surface.blit(razor_img, (540, 250))
-		display_font("Hor Speed: 7.1", 600, 470)
-		display_font("Vert Speed: 1.7", 600, 490)
+		display_font("Hor Speed: 8.1", 600, 470)
+		display_font("Vert Speed: 2.7", 600, 490)
 
 		pygame.display.update()
 
@@ -192,7 +193,6 @@ def crash(x, y):
 		pygame.display.update()
 		clock.tick(40)
 
-
 def new_game():
 	global high_score
 	high_score = 0
@@ -264,6 +264,7 @@ def pause():
 		text_rect.center = (DISPLAY_WIDTH * 0.5, DISPLAY_HEIGHT * 0.35)
 		surface.blit(text_Surface, text_rect)
 
+		button(550, 220, 30, 40, intro_screen, (0, 230, 235), (0, 240, 250), "Main Menu")
 		button(310, 170, 310, 40, continue_game, (0, 210, 50), (0, 240, 90), "Continue")
 		button(310, 170, 360, 40, quit, (200, 0, 50), (240, 0, 90), "Quit")
 		pygame.display.update()
