@@ -16,7 +16,9 @@ Recommendations and Warnings:
     2. Do not delete LocalData folder that gets automatically generated after
        you start the game, it saves your highscore.
 
-    3. Clicking New Game will reset your highscore. 
+    3. Clicking New Game will reset your highscore.
+
+    4. Music is enabled by default, you can disable it using the Music button in 	the home screen. 
 }
 
 Thank You for playing and Testing my Game.
