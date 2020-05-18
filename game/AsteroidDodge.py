@@ -1,5 +1,5 @@
 import pygame
-from pygame.locals import *
+from pygame.locals import DOUBLEBUF
 import random
 import time
 import math
@@ -98,7 +98,7 @@ def select_ship():
 				quit()
 
 		surface.fill((0, 0, 4))
-		Text = pygame.font.SysFont("Big Space.ttf", 90)
+		Text = pygame.font.SysFont(None, 90)
 		text_surface, text_rect = text_("Select Ship", Text, (255, 255, 255))
 		text_rect.center = (DISPLAY_WIDTH * 0.5, DISPLAY_HEIGHT * 0.25)
 		surface.blit(text_surface, text_rect)
