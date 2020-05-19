@@ -18,7 +18,7 @@ Recommendations and Warnings:
 
     3. Clicking New Game will reset your highscore.
 
-    4. Music is enabled by default, you can disable it using the Music button in 	the home screen. 
+    4. Music is enabled by default, you can disable it using the Music button in the home screen. 
 }
 
 Thank You for playing and Testing my Game.
