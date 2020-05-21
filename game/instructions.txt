@@ -21,6 +21,8 @@ Recommendations and Warnings:
     4. Music is enabled by default, you can disable it using the Music button in the home screen. 
 }
 
+All images were taken from flaticon and background space image was drawn in MS Paint.
+
 Thank You for playing and Testing my Game.
 
 -- Sankara Narayanan .B
